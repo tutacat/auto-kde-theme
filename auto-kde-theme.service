@@ -1,0 +1,5 @@
+[Unit]
+Description=Automatic Breeze dark theme script (22-7)
+
+[Service]
+ExecStart=/usr/bin/awk -f ./auto-kde-theme.awk

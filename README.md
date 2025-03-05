@@ -1,4 +1,4 @@
-# kde-theme-auto
+# auto-kde-theme
 Automatically changes the theme on KDE using user-running systemd timer.
 Written in awk using shell to change theme.
 
@@ -10,7 +10,7 @@ Written in awk using shell to change theme.
 
 ### Per-user
 * Symlink all the files to `~/.config/systemd/user/`
-* You must restart your user session to be able to load the unit and enable the timer.
+* You must restart your user session or run `systemctl daemon-reload --user` to be load the unit or enable the timer.
 
 ### Configuration
 * You will have to enable the timer unit if you want it to work all the time.

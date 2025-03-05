@@ -3,9 +3,8 @@ Description=Automatic Breeze dark theme script (22-7)
 After=system:time-sync.target
 
 [Service]
-WorkingDirectory=./.config/systemd/user
 Type=oneshot
-ExecStart=sh -c 'FILE="auto-kde-theme.awk"; UD="${XDG_DATA_HOME:-${HOME}/.config/share}/systemd/user/"; SUD="/etc/systemd/user/" if [ -f "${UD}${FILE}" ]; then FILE="${UD}${FILE}"; elif [ -f "${SUD}${FILE}" ]; then FILE="${SUD}${FILE}"; else echo "Error: `auto-kde-theme.awk` is not installed to the `user` unit directory" >&2; exit 63; fi; awk -f "$FILE"'
+ExecStart=sh -c 'FILE="auto-kde-theme.awk"; UD="${XDG_CONFIG_HOME:-${HOME}/.config}/systemd/user/"; SUD="/etc/systemd/user/" if [ -f "${UD}${FILE}" ]; then FILE="${UD}${FILE}"; elif [ -f "${SUD}${FILE}" ]; then FILE="${SUD}${FILE}"; else echo "Error: `auto-kde-theme.awk` is not installed to the `user` unit directory" >&2; exit 63; fi; awk -f "$FILE"'
 
 [Install]
 WantedBy=default.target

@@ -13,6 +13,8 @@ Written in awk using shell to change theme.
 * You must restart your user session or run `systemctl daemon-reload --user` to be load the unit or enable the timer.
 
 #### Configuration
+* You must set the times in **both** the Awk script and the SystemD timer unit for it to take effect.
+* To constantly update or check by running the Awk script, you should set the timer to some repeating time interval.
 * You will have to enable the timer unit if you want it to work all the time.
 * Start the timer with `systemctl start auto-kde-theme.timer`
 * You will have to `systemctl enable auto-kde-theme.timer` if you want it to work all the time.

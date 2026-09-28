@@ -7,4 +7,4 @@ Type=oneshot
 ExecStart=sh -c 'P=/systemd/user/;F=auto-kde-theme.awk;U="${XDG_CONFIG_HOME:-$HOME/.config}$P$F";S="/etc/$P$F";if [ -f "$U" ];then F="$U";elif [ -f "$S" ];then F="$S";else echo "error:`$F` not found in systemd `user` unit directory">&2;exit 1;fi;awk -f"$F"'
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
